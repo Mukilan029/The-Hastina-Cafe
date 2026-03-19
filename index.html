@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hastina Cafe — Rooftop Pure-Veg Bistro, Chromepet</title>
+  <meta name="description" content="The Hastina Cafe is a rooftop pure-vegetarian bistro in Chromepet, Chennai. Savor artisanal continental fare, burgers, and scenic city views at 4th Floor, Udayam Complex. Rated 4.9★ on Google." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top">↑</button>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="main-nav" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo">Hastina <span>Cafe</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#ambiance">Ambiance</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit Us</a></li>
+    <li><a href="tel:+919025279408" class="nav-cta nav-cta-link">Reserve</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#story">Our Story</a>
+  <a href="#menu">Menu</a>
+  <a href="#ambiance">Ambiance</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#visit">Visit Us</a>
+  <a href="tel:+919025279408">+91 90252 79408</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Hero">
+  <canvas id="stars-canvas" aria-hidden="true"></canvas>
+
+  <!-- SVG String Lights -->
+  <svg class="hero-lights" viewBox="0 0 1200 160" aria-hidden="true" preserveAspectRatio="none">
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <style>
+        @keyframes flicker {
+          0%,100%{opacity:1} 25%{opacity:.8} 50%{opacity:.6} 75%{opacity:.9}
+        }
+        .bulb { animation: flicker 2s ease-in-out infinite alternate; }
+      </style>
+    </defs>
+    <!-- Rope 1 -->
+    <path d="M0,20 Q100,55 200,30 Q300,5 400,35 Q500,60 600,28 Q700,5 800,38 Q900,62 1000,30 Q1100,8 1200,25" stroke="rgba(196,136,43,0.35)" stroke-width="1.2" fill="none"/>
+    <!-- Bulbs rope 1 -->
+    <g filter="url(#glow)">
+      <ellipse class="bulb" cx="50" cy="40" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="150" cy="50" rx="5" ry="7" fill="#DBA94E" opacity="0.85"/>
+      <ellipse class="bulb" cx="250" cy="24" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="350" cy="18" rx="5" ry="7" fill="#C4882B" opacity="0.8"/>
+      <ellipse class="bulb" cx="450" cy="50" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="550" cy="38" rx="5" ry="7" fill="#DBA94E" opacity="0.85"/>
+      <ellipse class="bulb" cx="650" cy="14" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="750" cy="50" rx="5" ry="7" fill="#C4882B" opacity="0.8"/>
+      <ellipse class="bulb" cx="850" cy="54" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="950" cy="24" rx="5" ry="7" fill="#DBA94E" opacity="0.85"/>
+      <ellipse class="bulb" cx="1050" cy="12" rx="5" ry="7" fill="#EFC97A" opacity="0.9"/>
+      <ellipse class="bulb" cx="1150" cy="36" rx="5" ry="7" fill="#C4882B" opacity="0.8"/>
+    </g>
+    <!-- Rope 2 -->
+    <path d="M0,90 Q150,120 300,95 Q450,68 600,100 Q750,125 900,88 Q1050,60 1200,95" stroke="rgba(196,136,43,0.22)" stroke-width="1" fill="none"/>
+    <g filter="url(#glow)" opacity="0.7">
+      <ellipse class="bulb" cx="100" cy="110" rx="4" ry="6" fill="#DBA94E"/>
+      <ellipse class="bulb" cx="300" cy="100" rx="4" ry="6" fill="#EFC97A"/>
+      <ellipse class="bulb" cx="500" cy="108" rx="4" ry="6" fill="#C4882B"/>
+      <ellipse class="bulb" cx="700" cy="118" rx="4" ry="6" fill="#EFC97A"/>
+      <ellipse class="bulb" cx="900" cy="96" rx="4" ry="6" fill="#DBA94E"/>
+      <ellipse class="bulb" cx="1100" cy="110" rx="4" ry="6" fill="#EFC97A"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow reveal">Rooftop Pure-Veg Bistro · Chromepet, Chennai</span>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Where the sky meets<br><em>honest food.</em>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      An elevated rooftop experience offering artisanal continental fare, crafted burgers, and panoramic city views — all 100% pure vegetarian.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="tel:+919025279408" class="btn-primary" id="hero-call-btn">📞 Call to Book</a>
+      <a href="#menu" class="btn-outline" id="hero-menu-btn">Explore Menu</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div class="stat-pill"><span class="icon">⭐</span> 4.9★ Google Rating</div>
+      <div class="stat-pill"><span class="icon">🌿</span> 100% Pure Veg</div>
+      <div class="stat-pill"><span class="icon">🏙️</span> 4th Floor Rooftop</div>
+    </div>
+  </div>
+
+  <!-- Info Bar -->
+  <div class="hero-info-bar" aria-label="Quick info">
+    <div class="info-item"><span class="icon">🕐</span> Mon–Fri 3PM–10:30PM</div>
+    <div class="info-item"><span class="icon">🕐</span> Sat–Sun 3PM–11PM</div>
+    <div class="info-item"><span class="icon">📍</span> Hasthinapuram, Chromepet</div>
+    <div class="info-item"><span class="icon">💰</span> ₹200–₹400 for two</div>
+    <div class="info-item"><span class="icon">🎵</span> Live Music Evenings</div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE STRIP ===== -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>100% Pure Vegetarian</span><span class="dot">✦</span>
+    <span>Rooftop Open-Air Dining</span><span class="dot">✦</span>
+    <span>City Skyline Views</span><span class="dot">✦</span>
+    <span>Live Music Evenings</span><span class="dot">✦</span>
+    <span>Artisanal Continental Fare</span><span class="dot">✦</span>
+    <span>Free Parking Available</span><span class="dot">✦</span>
+    <span>Free WiFi</span><span class="dot">✦</span>
+    <span>4.9★ on Google</span><span class="dot">✦</span>
+    <span>Dine-In · Delivery · Curbside</span><span class="dot">✦</span>
+    <!-- Duplicate for infinite loop -->
+    <span>100% Pure Vegetarian</span><span class="dot">✦</span>
+    <span>Rooftop Open-Air Dining</span><span class="dot">✦</span>
+    <span>City Skyline Views</span><span class="dot">✦</span>
+    <span>Live Music Evenings</span><span class="dot">✦</span>
+    <span>Artisanal Continental Fare</span><span class="dot">✦</span>
+    <span>Free Parking Available</span><span class="dot">✦</span>
+    <span>Free WiFi</span><span class="dot">✦</span>
+    <span>4.9★ on Google</span><span class="dot">✦</span>
+    <span>Dine-In · Delivery · Curbside</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ===== OUR STORY ===== -->
+<section id="story" aria-labelledby="story-heading">
+  <div class="story-left">
+    <span class="section-eyebrow reveal">Chapter One</span>
+    <h2 class="section-title reveal reveal-delay-1" id="story-heading">A rooftop built<br>on <em>conviction.</em></h2>
+    <p class="lead-para reveal reveal-delay-2">
+      "We didn't just open a restaurant. We opened a conversation — between the city and the sky, between a plate of food and a moment worth remembering."
+    </p>
+    <p class="reveal reveal-delay-2">
+      Hastina Cafe was born from a simple belief: that vegetarian food deserves the same reverence, craft, and theatre as any culinary tradition. Perched on the fourth floor of the Udayam Complex in Chromepet, we built a rooftop where every dish tells a story.
+    </p>
+    <p class="reveal reveal-delay-3">
+      Our menu draws from continental kitchens — hand-crafted burgers, silken pastas, cold-brew cocktails, and desserts that dissolve into memory. Every recipe is tested, rested, and tasted again. No shortcuts. No compromise on purity.
+    </p>
+    <p class="reveal reveal-delay-3">
+      String lights trace the skyline above your table. The city hums below. The music lifts the evening. This is what we mean by honest food — made with pride, served with warmth, eaten with the sky above you.
+    </p>
+  </div>
+  <div class="story-right">
+    <div class="stat-panel reveal reveal-delay-1">
+      <div class="stat-num">100<span style="font-size:1.5rem;color:var(--amber)">%</span></div>
+      <div class="stat-label">Pure Vegetarian — Always</div>
+      <p class="stat-desc">Every ingredient, every stock, every sauce — certified vegetarian. No exceptions. Our kitchen has never touched meat.</p>
+    </div>
+    <div class="stat-panel reveal reveal-delay-2">
+      <div class="stat-num">4.9<span style="font-size:1.5rem;color:var(--amber)">★</span></div>
+      <div class="stat-label">Google Rating</div>
+      <p class="stat-desc">Earned review by review, evening by evening. Our guests keep coming back — and that means everything to us.</p>
+    </div>
+    <div class="stat-panel reveal reveal-delay-3">
+      <div class="stat-num">4<span style="font-size:1.5rem;color:var(--amber)">th</span></div>
+      <div class="stat-label">Floor Rooftop Experience</div>
+      <p class="stat-desc">Open-air seating, city views, and string lights overhead. A table at Hastina is a seat above the ordinary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section id="menu" aria-labelledby="menu-heading">
+  <div class="menu-header">
+    <span class="section-eyebrow reveal">Chapter Two</span>
+    <h2 class="section-title reveal reveal-delay-1" id="menu-heading">Honest food, <em>artfully made.</em></h2>
+    <p class="section-lead reveal reveal-delay-2" style="margin:0 auto 0">Each dish on our menu is a small declaration of love for vegetarian cooking.</p>
+  </div>
+  <div class="menu-tabs reveal reveal-delay-3" role="tablist" aria-label="Filter menu by category">
+    <button class="tab-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="tab-btn" data-filter="continental" role="tab" aria-selected="false">Continental</button>
+    <button class="tab-btn" data-filter="burgers" role="tab" aria-selected="false">Burgers</button>
+    <button class="tab-btn" data-filter="pasta" role="tab" aria-selected="false">Pasta</button>
+    <button class="tab-btn" data-filter="drinks" role="tab" aria-selected="false">Drinks &amp; Desserts</button>
+  </div>
+  <ul class="menu-list" role="tabpanel">
+
+    <li class="menu-item reveal" data-category="continental">
+      <span class="menu-item-icon">🥗</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Continental</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Classic Caesar Salad</h3>
+        <p class="menu-item-desc">Crisp romaine hearts, house-made Caesar dressing, parmesan snow, and sourdough croutons. Light, sharp, and deeply satisfying.</p>
+      </div>
+      <div class="menu-item-price">₹220</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-1" data-category="burgers">
+      <span class="menu-item-icon">🍔</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Burgers</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">The Hastina Special</h3>
+        <p class="menu-item-desc">Our signature smash patty — spiced black-bean and sweet potato blend, aged cheddar, caramelised onions, chipotle aioli, brioche bun.</p>
+      </div>
+      <div class="menu-item-price">₹290</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-2" data-category="pasta">
+      <span class="menu-item-icon">🍝</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Pasta</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Truffle Mushroom Penne</h3>
+        <p class="menu-item-desc">Al-dente penne, sautéed mixed mushrooms, truffle cream reduction, fresh herbs, and a dusting of aged pecorino.</p>
+      </div>
+      <div class="menu-item-price">₹310</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-3" data-category="burgers">
+      <span class="menu-item-icon">🌮</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Burgers</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">BBQ Paneer Crunch</h3>
+        <p class="menu-item-desc">Tandoor-kissed paneer, coleslaw, pickled jalapeño, smoky BBQ sauce, sesame brioche. Bold, textured, and unapologetically flavourful.</p>
+      </div>
+      <div class="menu-item-price">₹270</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-1" data-category="continental">
+      <span class="menu-item-icon">🥣</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Continental</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Roasted Tomato Bisque</h3>
+        <p class="menu-item-desc">Slow-roasted vine tomatoes, basil oil, coconut cream swirl, served with sourdough soldiers. A city-view staple.</p>
+      </div>
+      <div class="menu-item-price">₹195</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-2" data-category="drinks">
+      <span class="menu-item-icon">🥤</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Drinks &amp; Desserts</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Cold Brew &amp; Churros</h3>
+        <p class="menu-item-desc">House cold-brew coffee with a cinnamon sugar swirl, paired with hand-rolled churros and Belgian dark chocolate dip.</p>
+      </div>
+      <div class="menu-item-price">₹220</div>
+    </li>
+
+    <li class="menu-item reveal" data-category="pasta">
+      <span class="menu-item-icon">🧀</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Pasta</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Four Cheese Ravioli</h3>
+        <p class="menu-item-desc">Hand-folded ravioli stuffed with ricotta, mozzarella, parmesan and gouda, in a light sage butter sauce.</p>
+      </div>
+      <div class="menu-item-price">₹340</div>
+    </li>
+
+    <li class="menu-item reveal reveal-delay-1" data-category="drinks">
+      <span class="menu-item-icon">🍮</span>
+      <div class="menu-item-body">
+        <div class="menu-item-top">
+          <span class="menu-item-category">Drinks &amp; Desserts</span>
+          <span class="veg-dot" title="Pure Vegetarian"></span>
+        </div>
+        <h3 class="menu-item-name">Salted Caramel Panna Cotta</h3>
+        <p class="menu-item-desc">Silken vanilla panna cotta, house-made salted caramel, brittle crumble and a hint of sea salt. Pure, quiet luxury.</p>
+      </div>
+      <div class="menu-item-price">₹210</div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ===== AMBIANCE ===== -->
+<section id="ambiance" aria-labelledby="ambiance-heading">
+  <div class="ambiance-glow" aria-hidden="true"></div>
+  <span class="section-eyebrow reveal">Chapter Three</span>
+  <h2 class="section-title reveal reveal-delay-1" id="ambiance-heading">The sky is the ceiling.<br><em>The city is the view.</em></h2>
+  <p class="section-lead reveal reveal-delay-2" style="margin:0 auto 2rem">Every evening at Hastina is framed by open sky, warm amber light, and the gentle hum of a city unwinding below.</p>
+
+  <!-- Animated Canvas String Lights -->
+  <canvas id="ambiance-canvas" class="ambiance-lights" height="160" aria-hidden="true"></canvas>
+
+  <div class="feature-grid">
+    <div class="feature-card reveal">
+      <span class="feature-icon" aria-hidden="true">🏙️</span>
+      <div class="feature-name">City Skyline Views</div>
+      <p class="feature-desc">Panoramic open-air rooftop seating overlooking the Chromepet skyline. A table unlike any other in the neighbourhood.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <span class="feature-icon" aria-hidden="true">🎵</span>
+      <div class="feature-name">Live Music</div>
+      <p class="feature-desc">Select evenings feature live acoustic sets. Music chosen to complement your meal, not compete with your conversation.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <span class="feature-icon" aria-hidden="true">👨‍👩‍👧</span>
+      <div class="feature-name">Family-Friendly</div>
+      <p class="feature-desc">A rooftop that welcomes everyone. Comfortable seating, calm ambiance, and a menu that delights all ages.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-3">
+      <span class="feature-icon" aria-hidden="true">🅿️</span>
+      <div class="feature-name">Free Parking</div>
+      <p class="feature-desc">Complimentary parking within the Udayam Complex. One less thing to think about on your way up to dinner.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <span class="feature-icon" aria-hidden="true">📶</span>
+      <div class="feature-name">Free WiFi</div>
+      <p class="feature-desc">Stay connected or share your evening with the world. High-speed WiFi available throughout the rooftop.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <span class="feature-icon" aria-hidden="true">🛵</span>
+      <div class="feature-name">Dine-In / Delivery / Pickup</div>
+      <p class="feature-desc">The Hastina experience at your table, at your door, or from our curb. We meet you wherever you are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" aria-labelledby="reviews-heading">
+  <div class="reviews-intro">
+    <span class="section-eyebrow reveal">What Our Guests Say</span>
+    <h2 class="section-title reveal reveal-delay-1" id="reviews-heading">Evenings that stay<br>with <em>you.</em></h2>
+    <p class="section-lead reveal reveal-delay-2" style="margin:0 auto;">From first-timers to regulars — these are the words that remind us why we do this every day.</p>
+  </div>
+  <div class="reviews-stack">
+
+    <div class="review-item reveal">
+      <span class="review-stars" aria-label="5 stars">★★★★★</span>
+      <blockquote class="review-quote">
+        The rooftop ambiance is something else entirely. String lights, soft music, the city below — and then the food arrives and somehow it gets even better. The truffle pasta was transcendent. I keep telling everyone about this place.
+      </blockquote>
+      <div class="review-author">
+        <div class="review-avatar" aria-hidden="true">PK</div>
+        <div class="review-line"></div>
+        <div>
+          <div class="review-name">Priya K.</div>
+          <div class="review-source">Google Review · Verified Visit</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-item reveal reveal-delay-2">
+      <span class="review-stars" aria-label="5 stars">★★★★★</span>
+      <blockquote class="review-quote">
+        As a vegetarian, I'm used to being an afterthought on most menus. At Hastina, I felt like the whole kitchen was built for me. The Hastina Special burger has ruined all other burgers for me. The view is just a bonus.
+      </blockquote>
+      <div class="review-author">
+        <div class="review-avatar" aria-hidden="true">AR</div>
+        <div class="review-line"></div>
+        <div>
+          <div class="review-name">Arjun R.</div>
+          <div class="review-source">Google Review · Regular Guest</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-item reveal reveal-delay-1">
+      <span class="review-stars" aria-label="5 stars">★★★★★</span>
+      <blockquote class="review-quote">
+        Came for a birthday dinner and left with a new favourite restaurant. The service was warm, the string lights created the most magical atmosphere, and the cold brew churros paired with city views — that's a memory I'll carry for a long time.
+      </blockquote>
+      <div class="review-author">
+        <div class="review-avatar" aria-hidden="true">SM</div>
+        <div class="review-line"></div>
+        <div>
+          <div class="review-name">Shreya M.</div>
+          <div class="review-source">Google Review · Special Occasion</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== VISIT US ===== -->
+<section id="visit" aria-labelledby="visit-heading">
+  <span class="section-eyebrow reveal">Chapter Four</span>
+  <h2 class="section-title reveal reveal-delay-1" id="visit-heading">Come find <em>us.</em></h2>
+  <div class="visit-grid">
+
+    <div class="visit-block reveal">
+      <h3>Opening Hours</h3>
+      <table class="hours-table" aria-label="Opening hours">
+        <tbody>
+          <tr><td>Monday</td><td>3:00 PM – 10:30 PM</td></tr>
+          <tr><td>Tuesday</td><td>3:00 PM – 10:30 PM</td></tr>
+          <tr><td>Wednesday</td><td>3:00 PM – 10:30 PM</td></tr>
+          <tr><td>Thursday</td><td>3:00 PM – 10:30 PM</td></tr>
+          <tr><td>Friday</td><td>3:00 PM – 10:30 PM</td></tr>
+          <tr class="weekend"><td>Saturday ✦</td><td>3:00 PM – 11:00 PM</td></tr>
+          <tr class="weekend"><td>Sunday ✦</td><td>3:00 PM – 11:00 PM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="visit-block reveal reveal-delay-1">
+      <h3>Contact &amp; Location</h3>
+      <div class="contact-row">
+        <span class="ico">📍</span>
+        <span>4th Floor, Udayam Complex, No-53, Dr. Rajendra Prasad Rd, Hasthinapuram, Chromepet, Chennai 600044</span>
+      </div>
+      <div class="contact-row">
+        <span class="ico">📞</span>
+        <a href="tel:+919025279408" style="color:var(--parch-dim); transition:color 0.2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--parch-dim)'">+91 90252 79408</a>
+      </div>
+      <div class="contact-row">
+        <span class="ico">🌿</span>
+        <span>Cuisine: Pure Vegetarian Continental</span>
+      </div>
+      <div class="contact-row">
+        <span class="ico">💰</span>
+        <span>Average cost: ₹200–₹400 for two</span>
+      </div>
+      <div class="contact-row">
+        <span class="ico">⭐</span>
+        <span>4.9★ on Google Maps</span>
+      </div>
+    </div>
+
+    <div class="visit-block reveal reveal-delay-2">
+      <h3>How We Serve You</h3>
+      <div class="services-chips">
+        <span class="chip">🍽️ Dine-In</span>
+        <span class="chip">🛵 Delivery</span>
+        <span class="chip">🚗 Curbside Pickup</span>
+        <span class="chip">🅿️ Free Parking</span>
+        <span class="chip">📶 Free WiFi</span>
+        <span class="chip">🎵 Live Music</span>
+        <span class="chip">👨‍👩‍👧 Family Friendly</span>
+        <span class="chip">🌿 100% Pure Veg</span>
+        <span class="chip">🏙️ Rooftop Seating</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== MAP CTA ===== -->
+<section id="map-cta" aria-labelledby="map-heading">
+  <div class="map-copy">
+    <span class="section-eyebrow reveal">Find Us</span>
+    <h2 class="section-title reveal reveal-delay-1" id="map-heading">The rooftop awaits.<br><em>We'll keep the lights on.</em></h2>
+    <p class="reveal reveal-delay-2">
+      We're tucked on the 4th floor of Udayam Complex, right on Dr. Rajendra Prasad Road in Hasthinapuram. Plenty of parking below, plenty of sky above.
+    </p>
+    <div class="reveal reveal-delay-3">
+      <a href="https://maps.google.com/?q=The+Hastina+Cafe,+Udayam+Complex,+Chromepet,+Chennai" target="_blank" rel="noopener noreferrer" class="map-link-btn" id="maps-btn">
+        📍 Open in Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="reveal reveal-delay-2">
+    <a href="https://maps.google.com/?q=The+Hastina+Cafe,+Udayam+Complex,+Chromepet,+Chennai" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+      <div class="map-placeholder">
+        <div class="map-grid" aria-hidden="true"></div>
+        <div class="map-label">
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <strong>The Hastina Cafe</strong>
+          <p>4th Floor, Udayam Complex<br>Chromepet, Chennai 600044</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer aria-label="Footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Hastina <span>Cafe</span></div>
+      <p>An elevated rooftop pure-veg bistro offering artisanal continental fare, burgers, and scenic city views in the heart of Chromepet, Chennai.</p>
+      <div class="rating-badge">⭐ 4.9★ on Google Maps</div>
+      <div class="veg-cert" style="display:inline-flex; margin-top:0.8rem;">PURE VEG CERTIFIED</div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#ambiance">Ambiance</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Reach Us</h4>
+      <ul>
+        <li><a href="tel:+919025279408">+91 90252 79408</a></li>
+        <li>Mon–Fri 3PM–10:30PM</li>
+        <li>Sat–Sun 3PM–11PM</li>
+        <li>4th Floor, Udayam Complex</li>
+        <li>Chromepet, Chennai 600044</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 The Hastina Cafe. All rights reserved.</span>
+    <span>Pure Vegetarian · Chromepet, Chennai</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
